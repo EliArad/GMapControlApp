@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6F8847BB-D23E-4720-888C-5798A116E706}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MapNET_Example</RootNamespace>
+    <AssemblyName>MapNET Example</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>packages\GMap.NET.Core.2.0.0\lib\net40\GMap.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsForms, Version=1.9.9.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>packages\GMap.NET.WinForms.2.0.0\lib\net40\GMap.NET.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.Core.1.0.112.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.EF6.1.0.112.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.Linq.1.0.112.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Device" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Shapes.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GMapMarkerPlane.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransparentPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="packages\EntityFramework.6.3.0\.signature.p7s" />
+    <None Include="packages\EntityFramework.6.3.0\buildTransitive\EntityFramework.props" />
+    <None Include="packages\EntityFramework.6.3.0\buildTransitive\EntityFramework.targets" />
+    <None Include="packages\EntityFramework.6.3.0\build\EntityFramework.props" />
+    <None Include="packages\EntityFramework.6.3.0\build\EntityFramework.targets" />
+    <None Include="packages\EntityFramework.6.3.0\content\net40\App.config.install.xdt" />
+    <None Include="packages\EntityFramework.6.3.0\content\net40\App.config.transform" />
+    <None Include="packages\EntityFramework.6.3.0\content\net40\Web.config.install.xdt" />
+    <None Include="packages\EntityFramework.6.3.0\content\net40\Web.config.transform" />
+    <None Include="packages\EntityFramework.6.3.0\EntityFramework.6.3.0.nupkg" />
+    <None Include="packages\EntityFramework.6.3.0\tools\EntityFramework6.PS2.psd1" />
+    <None Include="packages\EntityFramework.6.3.0\tools\EntityFramework6.PS2.psm1" />
+    <None Include="packages\EntityFramework.6.3.0\tools\EntityFramework6.psd1" />
+    <None Include="packages\EntityFramework.6.3.0\tools\EntityFramework6.psm1" />
+    <None Include="packages\EntityFramework.6.3.0\tools\init.ps1" />
+    <None Include="packages\EntityFramework.6.3.0\tools\install.ps1" />
+    <None Include="packages\EntityFramework.6.3.0\tools\netcoreapp3.0\any\ef6.runtimeconfig.json" />
+    <None Include="packages\GMap.NET.Core.2.0.0\.signature.p7s" />
+    <None Include="packages\GMap.NET.Core.2.0.0\GMap.NET.Core.2.0.0.nupkg" />
+    <None Include="packages\GMap.NET.WinForms.2.0.0\.signature.p7s" />
+    <None Include="packages\GMap.NET.WinForms.2.0.0\GMap.NET.WinForms.2.0.0.nupkg" />
+    <None Include="packages\Newtonsoft.Json.12.0.3\.signature.p7s" />
+    <None Include="packages\Newtonsoft.Json.12.0.3\LICENSE.md" />
+    <None Include="packages\Newtonsoft.Json.12.0.3\Newtonsoft.Json.12.0.3.nupkg" />
+    <None Include="packages\System.Data.SQLite.1.0.112.0\.signature.p7s" />
+    <None Include="packages\System.Data.SQLite.1.0.112.0\System.Data.SQLite.1.0.112.0.nupkg" />
+    <None Include="packages\System.Data.SQLite.Core.1.0.112.0\.signature.p7s" />
+    <None Include="packages\System.Data.SQLite.Core.1.0.112.0\build\net20\System.Data.SQLite.Core.targets" />
+    <None Include="packages\System.Data.SQLite.Core.1.0.112.0\build\net40\System.Data.SQLite.Core.targets" />
+    <None Include="packages\System.Data.SQLite.Core.1.0.112.0\build\net451\System.Data.SQLite.Core.targets" />
+    <None Include="packages\System.Data.SQLite.Core.1.0.112.0\build\net45\System.Data.SQLite.Core.targets" />
+    <None Include="packages\System.Data.SQLite.Core.1.0.112.0\build\net46\System.Data.SQLite.Core.targets" />
+    <None Include="packages\System.Data.SQLite.Core.1.0.112.0\lib\net20\System.Data.SQLite.dll.config" />
+    <None Include="packages\System.Data.SQLite.Core.1.0.112.0\lib\net40\System.Data.SQLite.dll.config" />
+    <None Include="packages\System.Data.SQLite.Core.1.0.112.0\lib\net451\System.Data.SQLite.dll.config" />
+    <None Include="packages\System.Data.SQLite.Core.1.0.112.0\lib\net45\System.Data.SQLite.dll.config" />
+    <None Include="packages\System.Data.SQLite.Core.1.0.112.0\lib\net46\System.Data.SQLite.dll.config" />
+    <None Include="packages\System.Data.SQLite.Core.1.0.112.0\lib\netstandard2.0\System.Data.SQLite.dll.config" />
+    <None Include="packages\System.Data.SQLite.Core.1.0.112.0\System.Data.SQLite.Core.1.0.112.0.nupkg" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.112.0\.signature.p7s" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.112.0\content\net40\app.config.install.xdt" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.112.0\content\net40\app.config.transform" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.112.0\content\net40\web.config.install.xdt" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.112.0\content\net40\web.config.transform" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.112.0\content\net451\app.config.install.xdt" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.112.0\content\net451\app.config.transform" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.112.0\content\net451\web.config.install.xdt" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.112.0\content\net451\web.config.transform" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.112.0\content\net45\app.config.install.xdt" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.112.0\content\net45\app.config.transform" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.112.0\content\net45\web.config.install.xdt" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.112.0\content\net45\web.config.transform" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.112.0\content\net46\app.config.install.xdt" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.112.0\content\net46\app.config.transform" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.112.0\content\net46\web.config.install.xdt" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.112.0\content\net46\web.config.transform" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.112.0\System.Data.SQLite.EF6.1.0.112.0.nupkg" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.112.0\tools\net40\install.ps1" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.112.0\tools\net451\install.ps1" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.112.0\tools\net45\install.ps1" />
+    <None Include="packages\System.Data.SQLite.EF6.1.0.112.0\tools\net46\install.ps1" />
+    <None Include="packages\System.Data.SQLite.Linq.1.0.112.0\.signature.p7s" />
+    <None Include="packages\System.Data.SQLite.Linq.1.0.112.0\content\net20\app.config.transform" />
+    <None Include="packages\System.Data.SQLite.Linq.1.0.112.0\content\net20\web.config.transform" />
+    <None Include="packages\System.Data.SQLite.Linq.1.0.112.0\content\net40\app.config.transform" />
+    <None Include="packages\System.Data.SQLite.Linq.1.0.112.0\content\net40\web.config.transform" />
+    <None Include="packages\System.Data.SQLite.Linq.1.0.112.0\content\net451\app.config.transform" />
+    <None Include="packages\System.Data.SQLite.Linq.1.0.112.0\content\net451\web.config.transform" />
+    <None Include="packages\System.Data.SQLite.Linq.1.0.112.0\content\net45\app.config.transform" />
+    <None Include="packages\System.Data.SQLite.Linq.1.0.112.0\content\net45\web.config.transform" />
+    <None Include="packages\System.Data.SQLite.Linq.1.0.112.0\content\net46\app.config.transform" />
+    <None Include="packages\System.Data.SQLite.Linq.1.0.112.0\content\net46\web.config.transform" />
+    <None Include="packages\System.Data.SQLite.Linq.1.0.112.0\System.Data.SQLite.Linq.1.0.112.0.nupkg" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\planetracker.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\planetracker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages\EntityFramework.6.3.0\build\Microsoft.Data.Entity.Build.Tasks.dll" />
+    <Content Include="packages\EntityFramework.6.3.0\lib\net40\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.3.0\lib\net40\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.3.0\lib\net40\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.3.0\lib\net40\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.3.0\lib\net45\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.3.0\lib\netstandard2.1\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.3.0\lib\netstandard2.1\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.3.0\lib\netstandard2.1\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.3.0\lib\netstandard2.1\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.3.0\tools\about_EntityFramework6.help.txt" />
+    <Content Include="packages\EntityFramework.6.3.0\tools\net40\any\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.3.0\tools\net40\any\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.3.0\tools\net40\win-x86\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.3.0\tools\net40\win-x86\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.3.0\tools\net45\any\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.3.0\tools\net45\any\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.3.0\tools\net45\win-x86\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.3.0\tools\net45\win-x86\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.3.0\tools\netcoreapp3.0\any\ef6.dll" />
+    <Content Include="packages\EntityFramework.6.3.0\tools\netcoreapp3.0\any\ef6.pdb" />
+    <Content Include="packages\GMap.NET.Core.2.0.0\lib\net40\GMap.NET.Core.dll" />
+    <Content Include="packages\GMap.NET.Core.2.0.0\lib\netstandard2.0\GMap.NET.Core.dll" />
+    <Content Include="packages\GMap.NET.WinForms.2.0.0\lib\net40\GMap.NET.WindowsForms.dll" />
+    <Content Include="packages\GMap.NET.WinForms.2.0.0\lib\netcoreapp3.0\GMap.NET.WindowsForms.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\net20\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\net20\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\net35\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\net35\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\netstandard1.0\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\netstandard1.0\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\netstandard1.3\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\netstandard1.3\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\netstandard2.0\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\netstandard2.0\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\portable-net40+sl5+win8+wp8+wpa81\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\portable-net40+sl5+win8+wp8+wpa81\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.12.0.3\packageIcon.png" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\build\net20\x64\SQLite.Interop.dll" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\build\net20\x86\SQLite.Interop.dll" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\build\net40\x64\SQLite.Interop.dll" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\build\net40\x86\SQLite.Interop.dll" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\build\net451\x64\SQLite.Interop.dll" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\build\net451\x86\SQLite.Interop.dll" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\build\net45\x64\SQLite.Interop.dll" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\build\net45\x86\SQLite.Interop.dll" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\build\net46\x64\SQLite.Interop.dll" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\build\net46\x86\SQLite.Interop.dll" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\lib\net20\System.Data.SQLite.dll" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\lib\net20\System.Data.SQLite.xml" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\lib\net40\System.Data.SQLite.dll" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\lib\net40\System.Data.SQLite.xml" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\lib\net451\System.Data.SQLite.dll" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\lib\net451\System.Data.SQLite.xml" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\lib\net45\System.Data.SQLite.dll" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\lib\net45\System.Data.SQLite.xml" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\lib\net46\System.Data.SQLite.dll" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\lib\net46\System.Data.SQLite.xml" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\lib\netstandard2.0\System.Data.SQLite.dll" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\lib\netstandard2.0\System.Data.SQLite.xml" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\runtimes\linux-x64\native\netstandard2.0\SQLite.Interop.dll" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\runtimes\osx-x64\native\netstandard2.0\SQLite.Interop.dll" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\runtimes\win-x64\native\netstandard2.0\SQLite.Interop.dll" />
+    <Content Include="packages\System.Data.SQLite.Core.1.0.112.0\runtimes\win-x86\native\netstandard2.0\SQLite.Interop.dll" />
+    <Content Include="packages\System.Data.SQLite.EF6.1.0.112.0\lib\net40\System.Data.SQLite.EF6.dll" />
+    <Content Include="packages\System.Data.SQLite.EF6.1.0.112.0\lib\net451\System.Data.SQLite.EF6.dll" />
+    <Content Include="packages\System.Data.SQLite.EF6.1.0.112.0\lib\net45\System.Data.SQLite.EF6.dll" />
+    <Content Include="packages\System.Data.SQLite.EF6.1.0.112.0\lib\net46\System.Data.SQLite.EF6.dll" />
+    <Content Include="packages\System.Data.SQLite.EF6.1.0.112.0\lib\netstandard2.1\System.Data.SQLite.EF6.dll" />
+    <Content Include="packages\System.Data.SQLite.Linq.1.0.112.0\lib\net20\System.Data.SQLite.Linq.dll" />
+    <Content Include="packages\System.Data.SQLite.Linq.1.0.112.0\lib\net40\System.Data.SQLite.Linq.dll" />
+    <Content Include="packages\System.Data.SQLite.Linq.1.0.112.0\lib\net451\System.Data.SQLite.Linq.dll" />
+    <Content Include="packages\System.Data.SQLite.Linq.1.0.112.0\lib\net45\System.Data.SQLite.Linq.dll" />
+    <Content Include="packages\System.Data.SQLite.Linq.1.0.112.0\lib\net46\System.Data.SQLite.Linq.dll" />
+    <Content Include="planetracker.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('packages\System.Data.SQLite.Core.1.0.112.0\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\System.Data.SQLite.Core.1.0.112.0\build\net46\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+  <Import Project="packages\System.Data.SQLite.Core.1.0.112.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('packages\System.Data.SQLite.Core.1.0.112.0\build\net46\System.Data.SQLite.Core.targets')" />
+</Project>
